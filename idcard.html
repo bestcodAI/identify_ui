@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card of student</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Battambang:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+      #idcard-preview {
+        width: 100%;
+        height: 700px;
+        /* font-family: "Battambang", system-ui; */
+      }
+    </style>
+    
+  </head>
+  <body>
+    <iframe
+      src=""
+      frameborder="0"
+      id="idcard-preview"
+      title="Id Card Preview"
+      type="application/pdf"></iframe>
+    <!-- <p id="idcard-preview"></p> -->
+    <button type="button" onclick="downloadIdCard()">Download PDF</button>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script> -->
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/polyfills.umd.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+    ></script>
+    <script src="base64-uris.js"></script>
+    <script src="scripts.js"></script>
+    <script>
+      fetch('employees.json')
+        .then((response) => response.json())
+        .then((data) => {
+          generateIdCard(data);
+        });
+    </script>
+  </body>
+</html>

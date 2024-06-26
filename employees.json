@@ -1,0 +1,47 @@
+[
+  {
+    "id": "B16-0226",
+    "name": "Chou Chamnan",
+    "sex": "Male",
+    "batch": "16",
+    "year": "IV",
+    "image": "image/chamnan_chou.jpg",
+    "department": "Computer Science"
+  },
+  {
+    "id": "B16-0223",
+    "name": "Som sophanaroth",
+    "sex": "Male",
+    "batch": "16",
+    "year": "IV",
+    "image": "image/som_sophanaroth.png",
+    "department": "Computer Science"
+  },
+  {
+    "id": "B16-0224",
+    "name": "Run sarakdylyden",
+    "sex": "Male",
+    "batch": "16",
+    "year": "IV",
+    "image": "image/run_sarakdylyden.jpg",
+    "department": "Computer Science"
+  },
+  {
+    "id": "B16-0225",
+    "name": "Samrith Idly",
+    "sex": "Male",
+    "batch": "16",
+    "year": "IV",
+    "image": "image/samrith_idly.jpg",
+    "department": "Computer Science"
+  },
+  {
+    "id": "B16-0228",
+    "name": "Chhay Sovandara",
+    "sex": "Male",
+    "batch": "16",
+    "year": "IV",
+    "image": "image/chhay_sovandara.jpg",
+    "department": "Computer Science"
+  }
+]
