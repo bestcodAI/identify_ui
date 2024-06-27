@@ -1,0 +1,109 @@
+<html>
+<head>
+    <title>Html-Qrcode Demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="justify-content-center">
+                <div class="col-md-12">
+                    <div class="col-md-4 card p-4 align-items-center align-content-center">
+                        <div id="qr-reader" class="col-md-12"></div>
+                        <div id="qr-reader-results" class="col-md-12"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="result"></td>
+                </tr>
+            </tbody>
+            
+        </table>
+
+        <form action="" method="get" id="form">
+            <input type="hidden" name="is_result" id="is_result">
+        </form>
+    </div>
+    <script src="html5-qrcode.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+
+    
+
+    const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+            });
+    
+
+     
+    function docReady(fn) {
+        // see if DOM is already available
+        if (document.readyState === "complete"
+            || document.readyState === "interactive") {
+            // call on next available tick
+            
+            setTimeout(fn, 1);
+        } else {
+            document.addEventListener("DOMContentLoaded", fn);
+        }
+    }
+
+
+    docReady(function () {
+        var resultContainer = document.getElementById('qr-reader-results');
+        // var lastResult, countResults = 0;
+
+
+        function onScanSuccess(decodedText, decodedResult) {
+            // if (decodedText !== lastResult) {
+            //     ++countResults;
+            //     lastResult = decodedText;
+            //     // Handle on success condition with the decoded message.
+            //     console.log(`Scan result ${decodedText}`, decodedResult);
+            //     alert(decodedText);
+            // }
+            console.log(`Scan result ${decodedText}`, decodedResult);
+            // alert(decodedText);
+
+           document.getElementById("result").innerHTML = decodedText;
+           document.getElementById("is_result").value = decodedText;
+           document.getElementById("is_result1").value = decodedText;
+           document.getElementById("form").submit();
+           
+        }
+
+        
+
+        
+
+
+        var html5QrcodeScanner = new Html5QrcodeScanner(
+            "qr-reader", { fps: 60, qrbox: 250 }, false);
+        html5QrcodeScanner.render(onScanSuccess);
+        
+        
+    });
+
+</script>
+</body>
+</html>

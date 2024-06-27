@@ -86,7 +86,7 @@ async function generateIdCard(data) {
     }
 
     doc.addImage(LOGO_URI, 0.897, 0.15, 0.36, 0.36);
-    doc.addImage(psbu_title, 0.262, 0.58, 1.56, 0.320);
+    doc.addImage(psbu_title, 0.262, 0.55, 1.56, 0.350);
 
     // add company name & sex
     // doc.setFont('Siemreap-Bold', 'bold');
